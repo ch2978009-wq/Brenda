@@ -1,0 +1,632 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050509;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* PANTALLA DE INICIO */
+
+#inicio {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center,
+        #401344 0%,
+        #120716 45%,
+        #050509 100%);
+}
+
+
+.contenido {
+    padding: 30px;
+}
+
+
+.pequeno {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    font-size: 55px;
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 10px #ff4d9d,
+        0 0 30px #ff4d9d;
+}
+
+
+button {
+    border: none;
+
+    padding: 15px 28px;
+
+    border-radius: 30px;
+
+    background: #ff4d9d;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff4d9d;
+
+    transition: 0.3s;
+}
+
+
+button:active {
+    transform: scale(0.9);
+}
+
+
+/* CARTA */
+
+#carta {
+    min-height: 100vh;
+
+    padding: 70px 25px;
+
+    background:
+        linear-gradient(
+            #100714,
+            #210d25
+        );
+}
+
+
+#carta h2 {
+    font-size: 35px;
+
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+
+#carta p {
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+    opacity: 0.9;
+}
+/* ESTRELLAS */
+
+.estrellas {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.estrellas::before,
+.estrellas::after {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        20px 50px white,
+        80px 120px white,
+        140px 30px white,
+        200px 180px white,
+        260px 80px white,
+        320px 230px white,
+        380px 50px white,
+        450px 150px white,
+        520px 90px white,
+        600px 200px white,
+        680px 40px white,
+        750px 160px white,
+        820px 70px white,
+        900px 220px white,
+        960px 100px white;
+
+    animation: parpadear 3s infinite alternate;
+}
+
+
+@keyframes parpadear {
+
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+.corazon {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 20px;
+
+    animation:
+        subir 6s linear forwards;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.5)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            scale(1.2)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+/* CARTA ROMÁNTICA */
+
+.carta-contenedor {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 35px 25px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 40px rgba(255, 77, 157, 0.15);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.fecha {
+
+    text-align: center;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.6;
+
+    margin-bottom: 20px;
+
+}
+
+
+.carta-contenedor h2 {
+
+    text-align: center;
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 15px #ff4d9d;
+
+}
+
+
+.linea {
+
+    width: 60px;
+
+    height: 2px;
+
+    background: #ff4d9d;
+
+    margin: 0 auto 35px;
+
+    box-shadow:
+        0 0 10px #ff4d9d;
+
+}
+
+
+.texto {
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.texto.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+/* ========================= */
+/* NUESTROS MOMENTOS */
+/* ========================= */
+
+#momentos {
+
+    min-height: 100vh;
+
+    padding: 90px 25px;
+
+    background:
+        linear-gradient(
+            #210d25,
+            #08060b
+        );
+
+}
+
+
+.titulo-seccion {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+
+.titulo-seccion p {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.5;
+
+    margin-bottom: 15px;
+
+}
+
+
+.titulo-seccion h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 20px #ff4d9d;
+
+}
+
+
+.titulo-seccion span {
+
+    opacity: 0.6;
+
+    font-size: 15px;
+
+}
+
+
+/* TARJETAS */
+
+.momento {
+
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    padding: 25px;
+
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease;
+
+}
+
+
+.momento:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+.numero {
+
+    font-size: 14px;
+
+    opacity: 0.4;
+
+    padding-top: 5px;
+
+}
+
+
+.momento-contenido h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.momento-contenido p {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+
+}
+.foto-momento {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    margin-bottom: 20px;
+
+    display: block;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.foto-momento:active {
+
+    transform: scale(0.97);
+
+}
+/* ANIMACIÓN DE FOTOS */
+
+.foto-momento {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.foto-momento.mostrar {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+
+/* EFECTO AL TOCAR */
+
+.foto-momento:active {
+    transform: scale(0.95);
+}
+
+
+/* BRILLO */
+
+.momento:hover .foto-momento {
+    filter: brightness(1.15);
+}
+/* ================= */
+/* FINAL */
+/* ================= */
+
+#final {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #4a123f,
+            #09060c 70%
+        );
+
+}
+
+
+.final-contenido {
+
+    max-width: 500px;
+
+}
+
+
+.corazon-grande {
+
+    font-size: 70px;
+
+    animation:
+        latido 1.5s infinite;
+
+    margin-bottom: 30px;
+
+}
+
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+
+.final-pequeno {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.6;
+
+    margin-bottom: 20px;
+
+}
+
+
+#final h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 20px #ff4d9d;
+
+}
+
+
+.pregunta {
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    margin-bottom: 40px;
+
+}
+
+
+.botones {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+}
+
+
+.btn-si {
+
+    background: #ff4d9d;
+
+}
+
+
+.btn-no {
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow: none;
+
+}
+
+
+.respuesta {
+
+    margin-top: 35px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+}
